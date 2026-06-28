@@ -1,13 +1,17 @@
 {
   "name": "devtrace",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "backend": "npm run dev --workspace=backend",
+    "desktop": "npm run dev --workspace=desktop",
+    "extension": "npm run dev --workspace=extension"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
 }
